@@ -1,0 +1,28 @@
+{
+  "id": "b371e908-6025-46b9-aad1-ff5ef5930cb7",
+  "name": "SD Seminar",
+  "publisher": "D. E. Veloper",
+  "version": "14.0.0.0",
+  "brief": "Seminar Solution",
+  "description": "This is my awesome Seminar Solution - Buy me !!!!",
+  "privacyStatement": "",
+  "EULA": "https://ba-consult.dk/downloads/warrenty.txt",
+  "help": "",
+  "url": "",
+  "logo": "./Images/Logo.jpg",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "14.0.0.0",
+  "application": "14.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "target": "Internal"
+  ,"features": ["TranslationFile"],
+  "contextSensitiveHelpUrl": "https://SDSeminar.com/help/",
+  "showMyCode": true,
+  "runtime": "3.0"
+}
