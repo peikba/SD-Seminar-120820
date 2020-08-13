@@ -1,4 +1,4 @@
-codeunit 50149 "CSD Install Codeunit"
+codeunit 50149 "CSD InstallSeminar"
 {
     Subtype = Install;
 
@@ -26,7 +26,7 @@ codeunit 50149 "CSD Install Codeunit"
         NoSerie."Default Nos." := true;
         NoSerie."Manual Nos." := true;
 
-        if NoSerie.Insert() then;
+        if NoSerie.Insert()  then;
 
         NoSerieLine."Series Code" := NoSerie.Code;
         NoSerieLine."Starting No." := 'SEM0000';
@@ -37,28 +37,28 @@ codeunit 50149 "CSD Install Codeunit"
         NoSerie.Description := 'Seminar Registrations';
         NoSerie."Default Nos." := true;
         NoSerie."Manual Nos." := false;
-        if NoSerie.Insert() then;
+        if NoSerie.Insert()  then;
 
         NoSerieLine."Series Code" := NoSerie.Code;
         NoSerieLine."Starting No." := 'SEMREG0000';
-        if NoSerieLine.Insert() then;
+        if NoSerieLine.Insert()  then;
         SeminarSetup."Seminar Registration Nos." := NoSerie.code;
 
         NoSerie.Code := 'SEMREGPOST';
         NoSerie.Description := 'Posted Seminar Registrations';
         NoSerie."Default Nos." := true;
         NoSerie."Manual Nos." := true;
-        if NoSerie.Insert() then;
+        if NoSerie.Insert()  then;
 
         NoSerieLine."Series Code" := NoSerie.Code;
         NoSerieLine."Starting No." := 'SEMPREG0000';
-        if NoSerieLine.Insert() then;
+        if NoSerieLine.Insert()  then;
         SeminarSetup."Posted Seminar Reg. Nos." := NoSerie.code;
 
-        if SeminarSetup.Insert() then;
+        if SeminarSetup.Insert()  then;
 
         SourceCode.Code := 'SEMINAR';
-        if SourceCode.Insert() then;
+        if SourceCode.Insert()  then;
         SourceCodeSetup.Get();
         //SourceCodeSetup."CSD Seminar" := 'SEMINAR';
         SourceCodeSetup.Modify();
@@ -78,7 +78,7 @@ codeunit 50149 "CSD Install Codeunit"
                 Seminar."Minimum Participants" := 4;
                 Seminar."Seminar Duration" := Course.Duration;
                 Seminar."Seminar Price" := Course.Price;
-                if Seminar.Insert() then;
+                if Seminar.Insert()  then;
             until course.Next() = 0;
     end;
 
@@ -88,7 +88,7 @@ codeunit 50149 "CSD Install Codeunit"
     begin
         Resource.Init();
         Resource."No." := 'INSTR';
-        if Resource.Insert() then;
+        if Resource.Insert()  then;
         Resource.Name := 'Mr. Instructor';
         Resource.validate("Gen. Prod. Posting Group", 'MISC');
         Resource."Direct Unit Cost" := 100;
@@ -96,7 +96,7 @@ codeunit 50149 "CSD Install Codeunit"
         Resource.Type := Resource.Type::Person;
         if Resource.Modify() then;
         Resource."No." := 'ROOM 01';
-        if Resource.Insert() then;
+        if Resource.Insert()  then;
         Resource.Name := 'Room 01';
         Resource.Type := Resource.Type::Machine;
         if Resource.Modify() then;
